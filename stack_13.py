@@ -4,33 +4,33 @@ from stack import Stack
 trajes_stack = Stack()
 
 #D E
-# while True:
-#     modelo = input('Ingresa el modelo (o "s" para salir): ')
-#     if modelo.lower() == 's':
-#         break
+while True:
+    modelo = input('Ingresa el modelo (o "s" para salir): ')
+    if modelo.lower() == 's':
+        break
         
-#     pelicula = input('Ingresa la película: ')
-#     estado = input('Ingresa el estado: ')
-#     new_traje = {'modelo': modelo, 'pelicula': pelicula, 'estado': estado}
+    pelicula = input('Ingresa la película: ')
+    estado = input('Ingresa el estado: ')
+    new_traje = {'modelo': modelo, 'pelicula': pelicula, 'estado': estado}
 
-#     # Verificar duplicados
-#     duplicado = False
-#     temp_stack = Stack()
+    # Verificar duplicados
+    duplicado = False
+    temp_stack = Stack()
     
-#     while trajes_stack.size() > 0:
-#         traje = trajes_stack.pop()
-#         temp_stack.push(traje)
-#         if (traje['modelo'] == new_traje['modelo'] and 
-#             traje['pelicula'] == new_traje['pelicula']):
-#             duplicado = True
-#             print('Este traje ya está registrado')
+    while trajes_stack.size() > 0:
+        traje = trajes_stack.pop()
+        temp_stack.push(traje)
+        if (traje['modelo'] == new_traje['modelo'] and 
+            traje['pelicula'] == new_traje['pelicula']):
+            duplicado = True
+            print('Este traje ya está registrado')
             
-#     # Restaurar pila original
-#     while temp_stack.size() > 0:
-#         trajes_stack.push(temp_stack.pop())
+    # Restaurar pila original
+    while temp_stack.size() > 0:
+        trajes_stack.push(temp_stack.pop())
         
-#     if not duplicado:
-#         trajes_stack.push(new_traje)
+    if not duplicado:
+        trajes_stack.push(new_traje)
     
 
 trajes_stack.push({"modelo": "Mark I", "pelicula": "Iron Man", "estado": "Dañado"})

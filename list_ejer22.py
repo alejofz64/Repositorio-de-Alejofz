@@ -121,7 +121,8 @@ jedis.sort_by_criterion('name')
 for jedi in jedis:
     print(f"  - {jedi.name} ({jedi.species})")
 
-print("\na. Listado ordenado por especie:")
+print()
+print("a. Listado ordenado por especie:")
 jedis.sort_by_criterion('species')
 for jedi in jedis:
     print(f"  - {jedi.species}: {jedi.name}")
@@ -144,13 +145,13 @@ for master_name in ["Yoda", "Luke Skywalker"]:
 
 # d. mostrar los Jedi de especie humana y twi'lek
 print("\nd. Jedi de especie humana y twi'lek:")
-species_filter = ["humana", "twi'lek"]
+species_filtro = ["humana", "twi'lek"]
 for jedi in jedis:
-    if jedi.species in species_filter:
+    if jedi.species in species_filtro:
         print(f"  - {jedi.name} ({jedi.species})")
 
 # e. listar todos los Jedi que comienzan con A
-print("\ne. Jedi que comienzan con A:")
+print("\ne. Jedi que comienzan con A:") 
 for jedi in jedis:
     if jedi.name.startswith('A'):
         print(f"  - {jedi.name}")
