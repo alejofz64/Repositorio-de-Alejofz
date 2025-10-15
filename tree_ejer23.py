@@ -4,7 +4,7 @@ criaturas_tree = BinaryTree()
 
 criaturas_data = [
     ('Ceto', {'derrotado_por': '-'}),
-    ('Tifón', {'derrotado_por': 'Zeus'}),
+    ('Tifon', {'derrotado_por': 'Zeus'}),
     ('Equidna', {'derrotado_por': 'Argos Panoptes'}),
     ('Dino', {'derrotado_por': '-'}),
     ('Pefredo', {'derrotado_por': '-'}),
@@ -14,30 +14,30 @@ criaturas_data = [
     ('Euriale', {'derrotado_por': '-'}),
     ('Esteno', {'derrotado_por': '-'}),
     ('Medusa', {'derrotado_por': 'Perseo'}),
-    ('Ladón', {'derrotado_por': 'Heracles'}),
-    ('Águila del Cáucaso', {'derrotado_por': '-'}),
+    ('Ladon', {'derrotado_por': 'Heracles'}),
+    ('Aguila del Caucaso', {'derrotado_por': '-'}),
     ('Quimera', {'derrotado_por': 'Belerofonte'}),
     ('Hidra de Lerna', {'derrotado_por': 'Heracles'}),
-    ('León de Nemea', {'derrotado_por': 'Heracles'}),
+    ('Leon de Nemea', {'derrotado_por': 'Heracles'}),
     ('Esfinge', {'derrotado_por': 'Edipo'}),
-    ('Dragón de la Cólquida', {'derrotado_por': '-'}),
+    ('Dragon de la Colquida', {'derrotado_por': '-'}),
     ('Cerbero', {'derrotado_por': '-'}),
-    ('Cerda de Cromión', {'derrotado_por': 'Tesco'}),
+    ('Cerda de Cromion', {'derrotado_por': 'Tesco'}),
     ('Ortro', {'derrotado_por': 'Heracles'}),
     ('Toro de Creta', {'derrotado_por': 'Tesco'}),
-    ('Jabalí de Calidón', {'derrotado_por': 'Atalanta'}),
+    ('Jabalí de Calidon', {'derrotado_por': 'Atalanta'}),
     ('Carcinos', {'derrotado_por': '-'}),
-    ('Gerión', {'derrotado_por': 'Heracles'}),
+    ('Gerion', {'derrotado_por': 'Heracles'}),
     ('Cloto', {'derrotado_por': '-'}),
-    ('Láquesis', {'derrotado_por': '-'}),
-    ('Átropos', {'derrotado_por': '-'}),
+    ('Laquesis', {'derrotado_por': '-'}),
+    ('Atropos', {'derrotado_por': '-'}),
     ('Minotauro de Creta', {'derrotado_por': 'Tesco'}),
     ('Harpías', {'derrotado_por': '-'}),
     ('Argos Panoptes', {'derrotado_por': 'Hermes'}),
     ('Aves del Estínfalo', {'derrotado_por': '-'}),
     ('Talos', {'derrotado_por': 'Medea'}),
     ('Sirenas', {'derrotado_por': '-'}),
-    ('Pitón', {'derrotado_por': 'Apolo'}),
+    ('Piton', {'derrotado_por': 'Apolo'}),
     ('Cierva de Cerinea', {'derrotado_por': '-'}),
     ('Basilisco', {'derrotado_por': '-'}),
     ('Jabalí de Erimanto', {'derrotado_por': '-'}),
@@ -75,14 +75,14 @@ def cargar_descripciones():
 cargar_descripciones()
 print()
 
-# c. mostrar toda la información de la criatura Talos
+# c. mostrar toda la informacion de la criatura Talos
 print("c. Informacion completa de Talos:")
 talos_node = criaturas_tree.search('Talos')
 if talos_node is not None:
     print(f"  Nombre: {talos_node.value}")
     print(f"  Derrotado por: {talos_node.other_values['derrotado_por']}")
     print(f"  Capturada por: {talos_node.other_values['capturada']}")
-    print(f"  Descripción: {talos_node.other_values['descripcion']}")
+    print(f"  Descripcion: {talos_node.other_values['descripcion']}")
 else:
     print("  Talos no encontrado")
 print()
@@ -104,37 +104,18 @@ def top_3_vencedores(root):
     
     contar_vencedores(root)
     
-    # Ordenar y mostrar top 3
-    
     vencedores_ordenados = []
     for heroe, cantidad in ranking.items():
         vencedores_ordenados.append((cantidad, heroe))
 
-    # Ordenar de mayor a menor
     vencedores_ordenados.sort(reverse=True)
-
-    # Mostrar top 3
-    print("  Ranking de héroes:")
+    
+    print("  Ranking de heroes:")
     
     print("     ",vencedores_ordenados[0])
     print("     ",vencedores_ordenados[1])
     print("     ",vencedores_ordenados[2])
     
-    # for i in range(3):
-    #     if i < len(vencedores_ordenados):
-    #         cantidad, heroe = vencedores_ordenados[i]
-    #         print(f"  {i+1}. {heroe}: {cantidad} criaturas")
-    
-    
-    
-    
-    
-    # sorted_ranking = sorted(ranking.items(), key=lambda x: x[1], reverse=True)
-    # for i, (vencedor, count) in enumerate(sorted_ranking[:3], 1):
-    #     print(f"  {i}. {vencedor}: {count} criaturas")
-
-
-
 
 top_3_vencedores(criaturas_tree.root)
 print()
@@ -176,9 +157,9 @@ for criatura in criaturas_heracles:
         print(f"  ✓ {criatura} capturada por Heracles")
 print()
 
-# i. se debe permitir búsquedas por coincidencia
-print("i. Búsqueda por coincidencia 'Dragón':")
-criaturas_tree.proximity_search('Dragón')
+# i. se debe permitir busquedas por coincidencia
+print("i. Busqueda por coincidencia 'Dragon':")
+criaturas_tree.proximity_search('Dragon')
 print()
 
 # j. eliminar al Basilisco y a las Sirenas
@@ -188,9 +169,9 @@ criaturas_a_eliminar = ['Basilisco', 'Sirenas']
 for criatura in criaturas_a_eliminar:
     value, other_value = criaturas_tree.delete(criatura)
     if value is not None:
-        print(f"  ✓ {criatura} eliminado")
+        print(f"   {criatura} eliminado")
     else:
-        print(f"  ✗ {criatura} no encontrado")
+        print(f"   {criatura} no encontrado")
 print()
 
 # k. modificar Aves del Estínfalo
@@ -199,19 +180,19 @@ aves_node = criaturas_tree.search('Aves del Estínfalo')
 if aves_node is not None:
     aves_node.other_values['derrotado_por'] = 'Heracles (varias)'
     aves_node.other_values['descripcion'] = 'Aves carnívoras derrotadas por Heracles en uno de sus trabajos'
-    print("  ✓ Aves del Estínfalo modificadas")
+    print("   Aves del Estínfalo modificadas")
 print()
 
-# l. modificar nombre de Ladón por Dragón Ladón
-print("l. Modificando nombre de Ladón:")
-ladon_value, ladon_other = criaturas_tree.delete('Ladón')
+# l. modificar nombre de Ladon por Dragon Ladon
+print("l. Modificando nombre de Ladon:")
+ladon_value, ladon_other = criaturas_tree.delete('Ladon')
 if ladon_value is not None:
-    criaturas_tree.insert('Dragón Ladón', ladon_other)
-    print("  ✓ Ladón renombrado a Dragón Ladón")
+    criaturas_tree.insert('Dragon Ladon', ladon_other)
+    print("   Ladon renombrado a Dragon Ladon")
 print()
 
-# m. realizar un listado por nivel del árbol
-print("m. Listado por nivel del árbol:")
+# m. realizar un listado por nivel del arbol
+print("m. Listado por nivel del arbol:")
 criaturas_tree.by_level()
 print()
 
@@ -226,8 +207,8 @@ def criaturas_capturadas_heracles(root):
 
 criaturas_capturadas_heracles(criaturas_tree.root)
 
-# Verificación final
+# Verificacion final
 print("\n" + "="*50)
-print("VERIFICACIÓN FINAL - Árbol actualizado:")
+print("VERIFICACION FINAL - Arbol actualizado:")
 print("="*50)
 criaturas_tree.in_order()

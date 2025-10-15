@@ -157,4 +157,3 @@ print()
 # Verificacion final
 print("Verificacion - Arbol completo despues de correcciones:")
 superheroes_villanos.in_order()
-
