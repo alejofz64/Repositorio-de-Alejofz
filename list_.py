@@ -85,6 +85,6 @@ class List(list):
             else:
                 end = middle -1
             middle = (start + end) // 2
-            
+
 
 
