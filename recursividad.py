@@ -36,15 +36,28 @@ def usar_la_fuerza(mochila,objetos_sacados):
         return(True,objetos_sacados +1)
     return usar_la_fuerza(mochila[1:],objetos_sacados +1)
 
-mochila1= ["radio", "mapa", "kit medico",
-           "sable de lu", "pila"]
+# mochila1= ["radio", "mapa", "kit medico",
+#            "sable de lu", "pila"]
 
-resultado, cantidad_objetos= usar_la_fuerza(mochila1,0)
-if resultado:
-    print('el sable de luz fue encontrado')
-    print('la contidad de objetos sacados es: ', cantidad_objetos)
-else:
-    print('el sable de luz no fue encontrado')
+# resultado, cantidad_objetos= usar_la_fuerza(mochila1,0)
+# if resultado:
+#     print('el sable de luz fue encontrado')
+#     print('la contidad de objetos sacados es: ', cantidad_objetos)
+# else:
+#     print('el sable de luz no fue encontrado')
+
+def factorial(number):
+    if number == 0:
+        return 1
+    else:
+        return number * factorial(number-1)
+    
+resultado=factorial(998)  #maximo factorial que te deja calcular
+
+print(resultado)
+
+from scipy.special import gammaln
+
 
 
 
