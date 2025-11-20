@@ -1,6 +1,6 @@
 from grapf import Graph
 
-g = Graph()
+g = Graph(True)
 
 g.insert_vertex('Luke Skywalker')
 g.insert_vertex('Darth Vader')
