@@ -1,40 +1,40 @@
 #TP 1 puntos 5 y 22 de recursividad
-def romano_a_decimal(num):
+# def romano_a_decimal(num):
     
-    valores = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 
-               'C': 100, 'D': 500, 'M': 1000}
+#     valores = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 
+#                'C': 100, 'D': 500, 'M': 1000}
     
-   # caso base: cadena vacia
-    if num == '':
-        return 0
+#    # caso base: cadena vacia
+#     if num == '':
+#         return 0
     
-    # caso cuando quede un solo caracter
-    if len(num) == 1:
-        return valores[num[0]]
+#     # caso cuando quede un solo caracter
+#     if len(num) == 1:
+#         return valores[num[0]]
     
-    # comparar el primer y segundo carácter
-    primero = valores[num[0]]
-    segundo = valores[num[1]]
+#     # comparar el primer y segundo carácter
+#     primero = valores[num[0]]
+#     segundo = valores[num[1]]
     
-    if primero < segundo:
-        return segundo - primero + romano_a_decimal(num[2:])
-    else:
-        return primero + romano_a_decimal(num[1:])
+#     if primero < segundo:
+#         return segundo - primero + romano_a_decimal(num[2:])
+#     else:
+#         return primero + romano_a_decimal(num[1:])
     
-print(romano_a_decimal('MDIV'))
+# print(romano_a_decimal('MDIV'))
 
 
-def usar_la_fuerza(mochila,objetos_sacados):
+# def usar_la_fuerza(mochila,objetos_sacados):
     
-    #caso base mochila basia
-    if not mochila:
-        return (False,objetos_sacados)
+#     #caso base mochila basia
+#     if not mochila:
+#         return (False,objetos_sacados)
     
-    objeto=mochila[0]
+#     objeto=mochila[0]
     
-    if objeto=='sable de luz':
-        return(True,objetos_sacados +1)
-    return usar_la_fuerza(mochila[1:],objetos_sacados +1)
+#     if objeto=='sable de luz':
+#         return(True,objetos_sacados +1)
+#     return usar_la_fuerza(mochila[1:],objetos_sacados +1)
 
 # mochila1= ["radio", "mapa", "kit medico",
 #            "sable de lu", "pila"]
@@ -46,19 +46,33 @@ def usar_la_fuerza(mochila,objetos_sacados):
 # else:
 #     print('el sable de luz no fue encontrado')
 
-def factorial(number):
-    if number == 0:
-        return 1
-    else:
-        return number * factorial(number-1)
+# def factorial(number):
+#     if number == 0:
+#         return 1
+#     else:
+#         return number * factorial(number-1)
     
-resultado=factorial(998)  #maximo factorial que te deja calcular
+# resultado=factorial(998)  #maximo factorial que te deja calcular
 
-print(resultado)
+# print(resultado)
 
-from scipy.special import gammaln
+# from scipy.special import gammaln
+
+# def factorial(number):
+#     if number == 0:
+#         return 1
+#     else:
+#         return number * factorial(number-1)
 
 
+def fib(number):
+    if number == 0 or number==1:
+        return number
+    else:
+         return fib(number-1) + fib(number-2)
+    
+result=fib(100)
+print(result)
 
 
 
