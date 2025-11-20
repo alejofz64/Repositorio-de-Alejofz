@@ -50,8 +50,9 @@ class Graph(List):
     def insert_vertex(
         self,
         value: Any,
+        other_values: Optional[Any] = None
     ) -> None:
-        node_vertex = Graph.__nodeVertex(value)
+        node_vertex = Graph.__nodeVertex(value, other_values)
         self.append(node_vertex)
 
     def insert_edge(self, origin_vertex: Any, destination_vertex: Any, weight: int) -> None:
@@ -60,7 +61,7 @@ class Graph(List):
         if origin is not None and destination is not None:
             node_edge = Graph.__nodeEdge(destination_vertex, weight)
             self[origin].edges.append(node_edge)
-            if self.is_directed and origin != destination:
+            if not self.is_directed and origin != destination:
                 node_edge = Graph.__nodeEdge(origin_vertex, weight)
                 self[destination].edges.append(node_edge)
         else:
